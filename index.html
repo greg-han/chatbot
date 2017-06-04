@@ -28,14 +28,25 @@ text-align: center;
 <center>
 <b>Ask Me Anything</b>
 <br>
-<input type="text" name="txtinput"><br>
-<button type="button" onclick="">Into The Ether</button>
+<input type="text" name="txtinput" style="width: 300px;height:300px"><br>
+<button type="button" onclick="" name="submit">Into The Ether</button>
 </center>
 </form>
 </p>
+<p id="return"></p>
 </div>
 <script>
+$(document).ready(function(){
+  $('#submit').click(function(){ 
+   returnMessage();
+ 
+});
+});
+function returnMessage(){
+ var input = document.getElementById("txtinput").value;
+ document.getElementById("return").innerHTML = input.value(); 
 
+}
 </script>
 </body>
 </html>

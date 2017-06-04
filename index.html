@@ -1,5 +1,6 @@
 <html>
 <body>
+
 <style>
 body{
 background-color: silver;
@@ -8,45 +9,32 @@ color: navy;
 margin: 0;
 }
 
-.row1{
-backround-color: navy;
-color: white;
-line-height: 5em;
-width 80%;
-margin-left: auto;
-margn-right: auto;
-
 center{
 text-align: center;
 }
 
 }
 </style>
-<div id="container" class="row1" style="float:center">
-<p id="message">
-<form> 
-<center>
-<b>Ask Me Anything</b>
-<br>
-<input type="text" name="txtinput" style="width: 300px;height:300px"><br>
-<button type="button" onclick="" name="submit">Into The Ether</button>
-</center>
-</form>
-</p>
-<p id="return"></p>
-</div>
-<script>
-$(document).ready(function(){
-  $('#submit').click(function(){ 
-   returnMessage();
- 
-});
-});
-function returnMessage(){
- var input = document.getElementById("txtinput").value;
- document.getElementById("return").innerHTML = input.value(); 
 
+<script language="JavaScript">
+  function returnMessage() {
+    document.getElementById('return').innerHTML = document.getElementById("txtinput").value;
 }
 </script>
+
+<div id="container" style="float:center">
+<p id="message">
+<center>
+<form>
+<b>Ask Me Anything</b>
+<br>
+<input type="text" id="txtinput"><br>
+</form>
+<input type="submit" onclick="returnMessage();">
+</center>
+</p>
+<br><br>
+<p><span id='return'></span></p>
+</div>
 </body>
 </html>
